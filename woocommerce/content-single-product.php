@@ -43,8 +43,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	foreach ($jopals as $person){
 		$jopal=get_user_by('slug',$person);
+/*		echo '<pre>';
+		echo print_r($jopal);
+		echo '</pre>';*/
 		echo get_avatar($jopal->ID,300);
-		echo '<div id="iam">我是囧伴 '. ucfirst($jopal->user_nicename).'</div>';
+		echo '<div id="iam">我是囧伴 '. ucfirst($jopal->display_name).'</div>';
 		echo '<a class="button ask-button" href="'. get_bloginfo("wpurl").'/pm?fepaction=newmessage&to='. $jopal->user_nicename.'&message_title=';
 		echo single_post_title(). '">咨询囧伴</a>';
 	}
