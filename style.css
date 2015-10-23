@@ -5,7 +5,7 @@
  Author:       Jinyan Yu
  Author URI:   http://example.com
  Template:     storefront
- Version:      0.6.3
+ Version:      0.6.4
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
@@ -15,7 +15,7 @@
 
 /* ==============
 Typography
-=================*/
+===================================================================*/
 
 p,h1,h2,h3,h4{
  font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -34,7 +34,7 @@ ul.menu li.current-menu-item > a{
 
 /* ==============
 UI Element
-=================*/
+===================================================================*/
 
 a:focus, .button:focus, .button.alt:focus, .button.added_to_cart:focus, .button.wc-forward:focus, button:focus{
  outline: none!important;
@@ -42,7 +42,7 @@ a:focus, .button:focus, .button.alt:focus, .button.added_to_cart:focus, .button.
 
 /* ==============
 Front Page
-=================*/
+====================================================================*/
 
 .hentry .entry-header{
  border-bottom: none;
@@ -340,7 +340,7 @@ div.product .summary{
 
 .single-product div.product{
  width: 70%;
- padding-right:30px;
+/* padding-right:30px;*/
 
 }
 
@@ -367,7 +367,7 @@ div#iam{
 
  .single-product div.product{
   width: 100%;
-  padding-right:30px;
+/*  padding-right:30px;*/
   float: none;
  }
 
@@ -619,7 +619,11 @@ body.page-template-template-fullwidth-php div.headerwrapper h1{
 }
 
 .main-navigation{
- padding-top: 3.5em;
+ padding-top: 30px;
+}
+
+.home .main-navigation{
+ margin-top: 30px;
 }
 
 .myfixed .main-navigation{
@@ -644,15 +648,28 @@ body.page-template-template-fullwidth-php div.headerwrapper h1{
  z-index: 20;
 }
 
+.page-template-template-fullwidth-shift-upwards-php .headerwrapper .page-title,
+.page-template-template-fullwidth-shift-upwards-php .woocommerce-breadcrumb{
+ display: none;
+}
 
+.page-template-template-fullwidth-shift-upwards-php .site-content{
+ height: 0;
+}
 
 
 .page-template-template-fullwidth-shift-upwards-php .site-main{
- margin-top: -600px;
- position: relative;
+/* margin-top: -600px;*/
+ max-width: 500px;
+ position: absolute;
+ left:0;
+ right:0;
+ margin-left: auto;
+ margin-right: auto;
+ top:100px;
  z-index: 2000;
  background-color: white;
- padding:30px 100px;
+ padding:30px 50px;
  -webkit-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
  -moz-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
  box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
@@ -668,6 +685,7 @@ body.page-template-template-fullwidth-php div.headerwrapper h1{
 
 
 /*==  Fluid Responsive Header ==*/
+
 
 
 /* eliminate duplicate arrows */
