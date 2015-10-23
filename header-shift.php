@@ -27,8 +27,20 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="col-full">
-			<div class="headerslider"> <?php echo do_shortcode('[pjc_slideshow slide_type="home-header-slide"]');?>
-			</div>
+			<?php
+/*				/*echo do_shortcode('[pjc_slideshow slide_type="home-header-slide"]');*/
+				$recent_posts=wp_get_recent_posts(array('numberposts'=>1,'post_type'=>'product','post_status'=>'publish'));
+				/*print_r($recent_posts[0]);*/
+				/*echo($recent_posts[0]['ID']);*/
+				$image=wp_get_attachment_url(get_post_thumbnail_id($recent_posts[0]['ID']));
+/*				echo '<div class="headerslider"';
+				echo ' style="background-image:url("'. $img .'"); background-size:"cover";>';*/
+
+			?>
+			<div class="shop-hero" style="background: url(<?php echo $image ?>) center center;background-size:cover;height: 750px;">
+
+
+
 			<div class="headerwrapper">
 
 				<?php
