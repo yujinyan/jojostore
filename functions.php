@@ -187,6 +187,19 @@ add_filter('woocommerce_enable_order_notes_field', '__return_false');
 
 
 /**
+ *  Add a custom field (in an order) to the emails
+ */
+
+add_action('woocommerce_email_customer_details', 'jo_woocommerce_email_order',20,1);
+add_action('woocommerce_admin_order_data_after_billing_address','jo_woocommerce_email_order',10,1);
+
+function jo_woocommerce_email_order( $order ) {
+    echo '<p><strong>微信号: </strong>'. '<br>'.get_post_meta($order->id,'_billing_wechat',true).'</p>';
+    echo '<p><strong>留言: </strong>'. '<br>'.get_post_meta($order->id,'_billing_comment',true).'</p>';
+}
+
+
+/**
  *  Customize footer
  */
 
