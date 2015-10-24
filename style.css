@@ -5,7 +5,7 @@
  Author:       Jinyan Yu
  Author URI:   http://example.com
  Template:     storefront
- Version:      0.6.4
+ Version:      0.6.5
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
@@ -799,13 +799,61 @@ div.jo-so-banner-33 div.textwidget h3+p{
 }
 
 
-/*.panel-grid-cell{
- float: none!important;
+
+/*================
+BootStrap Tabs
+=================*/
+
+.nav{
+ padding-left: 0;
+ margin-bottom: 45px;
+ list-style: none;
+}
+
+.nav-tabs{
+ overflow: hidden;
+ margin: 0 auto 45px;
+ text-align: center;
+
+}
+
+.nav>li{
+ position: relative;
  display: inline-block;
 }
 
-.panel-grid-cell .textwidget p:first-child{
+.nav-tabs>li>a{
+ margin-right: 2px;
+ line-height: 1.42857143;
+ border: 1px solid transparent;
  position: relative;
-}*/
+ display: block;
+ padding: 10px 15px;
+}
 
+.nav:before{
+ content: " ";
+ display: table;
+}
 
+.nav:after{
+ content: " ";
+ display: table;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover{
+ color: white;
+ cursor: default;
+ background-color: #3ba1da;
+ border: 1px solid #ddd;
+}
+
+.tab-content>.tab-pane{
+ display: none;
+}
+
+.tab-content>.active{
+ display: block;
+}

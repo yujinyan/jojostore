@@ -99,8 +99,10 @@ get_header( 'shop' ); ?>
 				);
 				$subcats = get_categories($args);
 				//print_r($subcats);
+				echo '<ul class="nav nav-tabs">';
+				$counter=0;
+				foreach ($subcats as $key=>$sc) {
 
-				foreach ($subcats as $sc) {
 					$productCheck = new WP_Query
 					(array
 						(
@@ -117,21 +119,46 @@ get_header( 'shop' ); ?>
 								)
 						)
 					);
-					if (!$productCheck->post_count == 0) {
-						echo '<h3>' . $sc->name . '</h3>';
+					if ($productCheck->post_count == 0){
+						unset($subcats[$key]);
+						continue;
+					}
+
+					if ($counter==0){
+						echo '<li class="active"><a href="#'.$sc->slug.'"data-toggle="tab">';
+					}else{
+						echo '<li><a href="#'.$sc->slug.'"data-toggle="tab">';
+					}
+					echo $sc->name;
+					echo '</a></li>';
+					$counter++;
+				};
+				$counter=0;
+
+				echo '</ul>';
+				echo '<div class="tab-content">';
+
+				foreach ($subcats as $sc) {
+
+
+						if ($counter==0){
+							echo '<div id="'.$sc->slug.'" class="tab-pane active">';
+						} else{
+							echo '<div id="'.$sc->slug.'" class="tab-pane">';
+						}
+
+						/*echo '<h3>' . $sc->name . '</h3>';*/
 						$shortcode_str = '[product_category category="' . $current_cat_obj->slug . ',' . $sc->slug . '" operator="AND" columns="3" per_page=100]';
 						//echo $shortcode_str;
 						echo do_shortcode($shortcode_str);
-
-					};
-
-
+						echo '</div>';
+						$counter++;
 
 
 				};
 			}
 
-			else {
+			else{
 				//echo "其他";
 				$shortcode_str = '[product_category category="' . $current_cat_obj->slug . '" columns="3" per_page="100"]';
 				//echo $shortcode_str;
