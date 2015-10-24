@@ -64,7 +64,7 @@ add_filter( 'wp_nav_menu_args', 'jo_nav_menu_args' );
 function jo_nav_menu_args( $args) {
 
     if( is_user_logged_in() ) {
-        if('primary'==$args['theme_location']){
+        if($args['theme_location']=='primary'||$args['theme_location']=='handheld'){
             $args['menu'] = 'Main Nav Logged In';
         }
     }
