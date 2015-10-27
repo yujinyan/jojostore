@@ -348,16 +348,3 @@ function jo_new_order_mail_recipient($recipient,$order){
 
 add_filter('woocommerce_email_recipient_new_order','jo_new_order_mail_recipient',1,2);
 
-/**
- *  Ultimate Member Default Avatar
- */
-
- add_filter( 'avatar_defaults', 'new_default_avatar' );
-
-function new_default_avatar ( $avatar_defaults ) {
-    //Set the URL where the image file for your avatar is located
-    $new_avatar_url = 'http://jojotour.cn/wp-content/plugins/ultimate-member/assets/img/default_avatar.jpg';
-    //Set the text that will appear to the right of your avatar in Settings>>Discussion
-    return $avatar_defaults;
-}
- 
