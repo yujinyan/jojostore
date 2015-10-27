@@ -62,11 +62,18 @@ function jo_remove_fourteen_sidebars() {
 add_filter( 'wp_nav_menu_args', 'jo_nav_menu_args' );
 
 function jo_nav_menu_args( $args) {
+    $user=wp_get_current_user();
 
     if( is_user_logged_in() ) {
         if($args['theme_location']=='primary'||$args['theme_location']=='handheld'){
+            if(in_array('administrator',(array)$user->roles)){ //testing, need to change to jopal in place of administrator
+                $args['menu'] = 'Main Nav Logged In Jopal';
+            }else{
             $args['menu'] = 'Main Nav Logged In';
+            }
         }
+
+
     }
     return $args;
 }
@@ -341,14 +348,16 @@ function jo_new_order_mail_recipient($recipient,$order){
 
 add_filter('woocommerce_email_recipient_new_order','jo_new_order_mail_recipient',1,2);
 
-//test
+/**
+ *  Ultimate Member Default Avatar
+ */
 
-//add_action('woocommerce_before_main_content','jo_test');
-function jo_test(){
-    $email='';
-    $kf=get_users(array('role'=>'kf'));
-    foreach ($kf as $usr){
-        $email .=$usr->user_email .', ';
-    }
-    print_r($email);
+ add_filter( 'avatar_defaults', 'new_default_avatar' );
+
+function new_default_avatar ( $avatar_defaults ) {
+    //Set the URL where the image file for your avatar is located
+    $new_avatar_url = 'http://jojotour.cn/wp-content/plugins/ultimate-member/assets/img/default_avatar.jpg';
+    //Set the text that will appear to the right of your avatar in Settings>>Discussion
+    return $avatar_defaults;
 }
+ 
