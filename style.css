@@ -555,6 +555,11 @@ Handheld Menu
 Plugin
 =================*/
 
+/*== Ultimate Member ==*/
+.um-field-role_select{
+ display: none;
+}
+
 /*== Product Image Badge ==*/
 div.container-image-and-badge br{
  display: none;
@@ -658,26 +663,28 @@ body.page-template-template-fullwidth-php div.headerwrapper h1{
  display: none;
 }
 
-.page-template-template-fullwidth-shift-upwards-php .site-content{
- height: 0;
-}
-
 
 .page-template-template-fullwidth-shift-upwards-php .site-main{
-/* margin-top: -600px;*/
- max-width: 500px;
- position: absolute;
+ margin-top: -600px;
+ /*max-width: 500px;*/
+ position: relative;
  left:0;
  right:0;
  margin-left: auto;
  margin-right: auto;
- top:100px;
+ /*top:100px;*/
  z-index: 2000;
  background-color: white;
  padding:30px 50px;
  -webkit-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
  -moz-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
  box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
+}
+
+
+
+footer{
+ clear: both;
 }
 
 .page-template-template-fullwidth-shift-upwards-php .myfixed{
@@ -726,6 +733,10 @@ span.frs-arrow-left{
 }
 
 /*== siteorigin banner ==*/
+
+.jo-so-banner-33 img{
+ margin: 0 auto;
+}
 
 div.jo-so-banner-container{
  padding-left: 20%!important;
