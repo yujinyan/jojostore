@@ -293,6 +293,20 @@ function jo_add_hover_markup_cat($category){
     echo '"></a></div>';
 };
 
+
+/**
+ *  Ultimate Member Custom Validation for @edu
+ */
+
+add_action('um_custom_field_validation_edu_mail','jo_um_my_custom_valid_function', 10,2);
+function jo_um_my_custom_valid_function( $key, $array ) {
+    global $ultimatemember;
+    if(isset($array['user_email'])&& (strpos($array['user_email'],'@edu')==false)){
+        $ultimatemember->form->add_error($key, '请使用学邮验证学生身份~' );
+    };
+
+}
+
 /**
  *  Add Analytics
  */
