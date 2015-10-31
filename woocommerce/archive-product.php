@@ -57,7 +57,7 @@ get_header( 'shop' ); ?>
 			echo '</pre>';*/
 
 			if($current_cat_obj->post_type=='page'){
-				// 针对全部商品页
+				//echo '针对全部商品页';
 				/**
 				 * woocommerce_before_shop_loop hook
 				 *
@@ -77,7 +77,75 @@ get_header( 'shop' ); ?>
 
 			 	woocommerce_product_loop_end();*/
 
-				echo do_shortcode('[products columns=3 per_page=100]');
+				$IDbyNAME = get_term_by('slug', 'feature', 'product_cat');
+				$product_cat_ID = $IDbyNAME->term_id;
+				$args = array(
+					'hierarchical' => 1,
+					'show_option_none' => '',
+					'hide_empty' => 0,
+					'parent' => $product_cat_ID,
+					'taxonomy' => 'product_cat',
+				);
+				$subcats = get_categories($args);
+				//print_r($subcats);
+				echo '<ul class="nav nav-tabs">';
+				$counter=0;
+				foreach ($subcats as $key=>$sc) {
+
+					$productCheck = new WP_Query
+					(array
+						(
+							'post_type' => 'product',
+							'post_status' => 'publish',
+							'tax_query' =>
+								array(
+									array(
+										'taxonomy' => 'product_cat',
+										'terms' => array($sc->slug),
+										'field' => 'slug',
+									)
+								)
+						)
+					);
+					if ($productCheck->post_count == 0){
+						unset($subcats[$key]);
+						continue;
+					}
+
+					if ($counter==0){
+						echo '<li class="active"><a href="#'.$sc->slug.'"data-toggle="tab">';
+					}else{
+						echo '<li><a href="#'.$sc->slug.'"data-toggle="tab">';
+					}
+					echo $sc->name;
+					echo '</a></li>';
+					$counter++;
+				};
+				$counter=0;
+
+				echo '</ul>';
+				echo '<div class="tab-content">';
+
+				foreach ($subcats as $sc) {
+
+
+					if ($counter==0){
+						echo '<div id="'.$sc->slug.'" class="tab-pane active">';
+					} else{
+						echo '<div id="'.$sc->slug.'" class="tab-pane">';
+					}
+
+					/*echo '<h3>' . $sc->name . '</h3>';*/
+					$shortcode_str = '[product_category category="' . $sc->slug . '" columns="3" per_page=100]';
+					//echo $shortcode_str;
+					echo do_shortcode($shortcode_str);
+					echo '</div>';
+					$counter++;
+
+
+				};
+
+				//echo do_shortcode('[products columns=3 per_page=100]');
 			}
 
 			elseif(category_has_children($current_cat_obj->term_id,'product_cat') and $current_cat_obj->taxonomy=='product_cat'){
