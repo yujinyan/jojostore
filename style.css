@@ -812,7 +812,7 @@ div.jo-so-banner-33 div.textwidget h3+p{
 
 
 /*================
-BootStrap Tabs
+Bootstrap Tabs
 =================*/
 
 .nav{
@@ -857,7 +857,7 @@ BootStrap Tabs
 .nav-tabs>li.active>a:hover{
  color: white;
  cursor: default;
- background-color: #3ba1da;
+ background-color: #232323;
  border: 1px solid #ddd;
 }
 
