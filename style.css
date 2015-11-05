@@ -202,10 +202,7 @@ ul.products li.product a h3{
 }
 
 @media screen and (max-width: 65.141em){
- ul.products li.product.last.product-category
- {
-  display: none;
- }
+
  div.col-full{
   margin-left:0;
   margin-right:0;
