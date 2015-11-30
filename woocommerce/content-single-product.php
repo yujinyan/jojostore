@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	//woocommerce_show_product_images();
 
 	woocommerce_template_single_add_to_cart(); // text display modified in function.php using gettext filter
-
+	woocommerce_template_single_price();
 	?>
 
 
@@ -84,11 +84,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 * @hooked woocommerce_template_single_sharing - 50
 			 */
 			//do_action( 'woocommerce_single_product_summary' );
-		woocommerce_template_single_title();
+		//woocommerce_template_single_title();
 		//woocommerce_template_single_meta();
 		woocommerce_template_single_sharing();
 		woocommerce_template_single_rating();
-		woocommerce_template_single_price();
 		woocommerce_template_single_excerpt();
 		//woocommerce_button_proceed_to_checkout();
 		//woocommerce_template_single_add_to_cart();

@@ -585,7 +585,7 @@ div#primary h3{
  text-align: center;
 }
 
-body.page-template-template-fullwidth-php div.headerwrapper h1{
+div.headerwrapper h1{
  position: absolute;
  top: 40%;
  left:0;

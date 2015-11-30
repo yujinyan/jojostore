@@ -48,7 +48,10 @@
 			 * @hooked storefront_primary_navigation - 50
 			 */
 			//do_action( 'storefront_header' );
-			storefront_primary_navigation()
+			storefront_primary_navigation();
+			echo '<h1 class="page-title">';
+			echo woocommerce_template_single_title();
+			echo '</h1>';
 			?>
 		</div>
 
