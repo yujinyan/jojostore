@@ -5,7 +5,7 @@
  Author:       Jinyan Yu
  Author URI:   http://example.com
  Template:     storefront
- Version:      0.6.6
+ Version:      0.6.7
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
@@ -302,8 +302,13 @@ Product
  padding: 1em 0!important;
 }
 
-div.product .summary{
+.single-product div.product .summary{
  width: 100%!important;
+ margin-bottom:0!important;
+}
+
+.product .summary p {
+ font-size: 18px;
 }
 
 
@@ -347,8 +352,7 @@ div.product .summary{
 
 .single-product div.product{
  width: 70%;
-/* padding-right:30px;*/
-
+ padding-right: 15px;
 }
 
 .wc-forward::after{
