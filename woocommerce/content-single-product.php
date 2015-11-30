@@ -67,11 +67,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+<?php if (is_product() && has_term('feature-2','product_cat')){
+	wc_get_template( 'single-product/tabs/description.php' );
+	comments_template();
+	} else	{
 
 
-	<div class="summary entry-summary">
 
-		<?php
+		echo '<div class="summary entry-summary">';
+
+
 			/**
 			 * woocommerce_single_product_summary hook
 			 *
@@ -95,11 +100,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
-		?>
 
-	</div><!-- .summary -->
 
-	<?php
+		echo '</div><!-- .summary -->';
+
+
 		/**
 		 * woocommerce_after_single_product_summary hook
 		 *
@@ -112,7 +117,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		wc_get_template( 'single-product/tabs/additional-information.php' );
     	wc_get_template( 'single-product/tabs/description.php' );
 		comments_template();
-
+	}
 	?>
 
 
