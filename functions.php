@@ -8,6 +8,16 @@
 
 
 /**
+ * dequeue stylesheets
+ */
+
+add_action( 'wp_print_scripts', 'jo_deregister_javascript', 100 );
+
+function jo_deregister_javascript() {
+    wp_deregister_script( 'google-maps' );
+}
+
+/**
  * enqueue stylesheets
  */
 
