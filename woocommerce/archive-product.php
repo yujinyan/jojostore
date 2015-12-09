@@ -77,7 +77,7 @@ get_header( 'shop' ); ?>
 
 			 	woocommerce_product_loop_end();*/
 
-				$IDbyNAME = get_term_by('slug', 'feature', 'product_cat');
+				$IDbyNAME = get_term_by('slug', 'theme', 'product_cat');
 				$product_cat_ID = $IDbyNAME->term_id;
 				$args = array(
 					'hierarchical' => 1,
@@ -156,7 +156,7 @@ get_header( 'shop' ); ?>
 
 			elseif (get_term_by('id',$current_cat_obj->parent,'product_cat')->slug=='city') {
 				//echo "城市”页下根据“特色”分类显示路线";
-				$IDbyNAME = get_term_by('slug', 'feature', 'product_cat');
+				$IDbyNAME = get_term_by('slug', 'theme', 'product_cat');
 				$product_cat_ID = $IDbyNAME->term_id;
 				$args = array(
 					'hierarchical' => 1,
