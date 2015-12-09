@@ -165,6 +165,14 @@ function jo_custom_override_checkout_fields( $fields ) {
         'clear'     => true,
         'required'  => true
     );
+    $fields['billing']['billing_tour_date'] = array(
+        'label'     => '行程开始日期',
+        'placeholder'   => '请标注行程开始日期',
+        'required'  => true,
+        'class'     => array('form-row-wide'),
+        'type'      => 'text',
+        'clear'     => true,
+    );
     $fields['billing']['billing_name'] = array(
         'label'     => '姓名',
         'placeholder'   => '请输入真实姓名',
@@ -175,7 +183,7 @@ function jo_custom_override_checkout_fields( $fields ) {
     );
 
     $order=array(
-      'billing_name','billing_email','billing_phone','billing_wechat','billing_comment'
+      'billing_name','billing_email','billing_phone','billing_wechat','billing_tour_date','billing_comment'
     );
 
     foreach($order as $field){
@@ -215,6 +223,7 @@ add_action('woocommerce_admin_order_data_after_billing_address','jo_woocommerce_
 
 function jo_woocommerce_email_order( $order ) {
     echo '<p><strong>微信号: </strong>'. '<br>'.get_post_meta($order->id,'_billing_wechat',true).'</p>';
+    echo '<p><strong>行程开始日期: </strong>'. '<br>'.get_post_meta($order->id,'_billing_tour_date',true).'</p>';
     echo '<p><strong>留言: </strong>'. '<br>'.get_post_meta($order->id,'_billing_comment',true).'</p>';
 }
 
