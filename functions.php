@@ -22,6 +22,7 @@ function jo_deregister_javascript() {
  */
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
 function theme_enqueue_styles() {
     $parent_style = 'parent-style';
 
@@ -64,30 +65,6 @@ function jo_remove_fourteen_sidebars() {
 
 
 
-
-/**
- * modify nav based on whether user logged in or not
-*/
-
-add_filter( 'wp_nav_menu_args', 'jo_nav_menu_args' );
-
-function jo_nav_menu_args( $args) {
-    $user=wp_get_current_user();
-
-    if( is_user_logged_in() ) {
-        if($args['theme_location']=='primary'||$args['theme_location']=='handheld'){
-            if(in_array('administrator',(array)$user->roles)){ //testing, need to change to jopal in place of administrator
-                $args['menu'] = 'Main Nav Logged In Jopal';
-            }else{
-            $args['menu'] = 'Main Nav Logged In';
-            }
-        }
-
-
-    }
-    return $args;
-}
-
 /**
  * modify wooCommerce product page
 */
@@ -98,12 +75,7 @@ function jo_nav_menu_args( $args) {
 function woocommerce_template_product_description() {
     wc_get_template( 'single-product/tabs/additional-information.php' );
     wc_get_template( 'single-product/tabs/description.php' );
-
-
-
 }
-
-
 
 add_action('woocommerce_after_single_product_summary', create_function( '$args', 'call_user_func(\'comments_template\');'), 14);
 
