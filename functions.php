@@ -153,9 +153,18 @@ function jo_custom_override_checkout_fields( $fields ) {
         'type'      => 'text',
         'clear'     => true,
     );
+    $fields['billing']['billing_id_card'] = array(
+        'label'     => '身份证',
+        'placeholder'   => '请输入身份证',
+        'required'  => true,
+        'class'     => array('form-row-wide'),
+        'type'      => 'text',
+        'clear'     => true,
+    );
+
 
     $order=array(
-      'billing_name','billing_email','billing_phone','billing_wechat','billing_tour_date','billing_comment'
+      'billing_name','billing_id_card','billing_email','billing_phone','billing_wechat','billing_tour_date','billing_comment'
     );
 
     foreach($order as $field){
@@ -285,16 +294,19 @@ function jo_add_hover_markup_cat($category){
 };
 
 
+
+
 /**
- *  Ultimate Member Custom Validation for @edu
+ *  Ultimate Member Custom Validation for id card
  */
 
-add_action('um_custom_field_validation_edu_mail','jo_um_my_custom_valid_function', 10,2);
-function jo_um_my_custom_valid_function( $key, $array ) {
+add_action('um_custom_field_validation_id','jo_um_my_custom_id_validation', 10,2);
+function jo_um_my_custom_id_validation( $key, $array ) {
+    echo 'testing';
     global $ultimatemember;
-    if(isset($array['user_email'])&& (strpos($array['user_email'],'@edu')==false)){
+    //if(isset($array['user_email'])){
         $ultimatemember->form->add_error($key, '请使用学邮验证学生身份~' );
-    };
+//    };
 
 }
 
