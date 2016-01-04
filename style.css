@@ -13,9 +13,9 @@
 */
 
 
-/* ==============
-Typography
-===================================================================*/
+/*------------------------------------*\
+    TYPOGRAPHY
+\*------------------------------------*/
 
 p,h1,h2,h3,h4{
  font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -32,17 +32,13 @@ ul.menu li.current-menu-item > a{
 }
 
 
-/* ==============
-UI Element
-===================================================================*/
+/*------------------------------------*\
+    UI ELEMENT / GLOBAL
+\*------------------------------------*/
 
 a:focus, .button:focus, .button.alt:focus, .button.added_to_cart:focus, .button.wc-forward:focus, button:focus{
  outline: none!important;
 }
-
-/* ==============
-Front Page
-====================================================================*/
 
 .hentry .entry-header{
  border-bottom: none;
@@ -51,13 +47,93 @@ Front Page
 }
 
 .hentry{
- border-bottom: none;
  margin-bottom: 0!important;
  padding-bottom: 0!important;
 }
 
+.site-branding{
+ display:none!important;
+}
 
-/*== Header ==*/
+
+/*------------------------------------*\
+    FOOTER
+\*------------------------------------*/
+
+footer{
+ clear: both;
+}
+
+footer section.block{
+ text-align: center;
+}
+
+.widget_nav_menu ul li::before{
+ display: none;
+}
+
+div.site-info{
+ text-align: center;
+}
+
+aside#sow-image-2{
+ max-width: 270px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top:-40px;
+}
+
+/*------------------------------------*\
+    MENU
+\*------------------------------------*/
+
+/* Handheld Menu */
+
+.menu-toggle:before{
+ font-size: 40px!important;
+ padding-left: 20px!important;
+}
+
+.menu-toggle{
+ font-size: 0!important;
+ background-color:transparent;
+ box-shadow: none;
+ position: relative!important;
+ z-index: 2000!important;
+}
+
+.menu-toggle:hover{
+ background-color: transparent;
+}
+
+.handheld-navigation{
+ position: relative;
+ text-align: left;
+ background-color: rgb(60,60,60);
+ width: 300px!important;
+ height: 1500px;
+ margin-top: -100px;
+ padding-top: 120px;
+ z-index: 1000;
+}
+
+.myfixed .menu-toggle{
+ margin-top: 10px;
+}
+
+.handheld-navigation .menu-item a:before{
+ display: none;
+}
+
+@media screen and (max-width: 600px){
+ #wpadminbar{
+  position:fixed;
+ }
+}
+
+/*------------------------------------*\
+    HEADER
+\*------------------------------------*/
 
 .site-header .col-full {
  max-width:100%;
@@ -71,9 +147,7 @@ Front Page
 }
 
 .headerslider{
-
  width: 100%;
-
 }
 
 .headerslider img{
@@ -95,7 +169,6 @@ Front Page
  height:100%;
  position: absolute;
  top: 0;
-/* z-index: 20;*/
  text-align: center;
 }
 
@@ -124,16 +197,9 @@ Front Page
 }
 
 
-
-/* front page */
-
-body.home h1{
- position: static!important;
-}
-
-#pl-2040 .panel-grid-cell .so-panel{
- margin-bottom: 0!important;
-}
+/*------------------------------------*\
+    PRODUCT DISPLAY
+\*------------------------------------*/
 
 ul.products{
  text-align: center;
@@ -165,8 +231,6 @@ ul.products li img{
  margin-bottom: 0!important;
 }
 
-
-
 ul.products li.product a h3 mark.count{
  display: none;
 }
@@ -191,14 +255,10 @@ ul.products li.product a h3{
  left: 0;
  right: 0;
  margin: auto!important;
- /* display: table-cell;*/
  vertical-align:middle;
  z-index: 20;
  text-shadow: 0 0 30px rgba(25, 25, 25, 1);
-
  padding-left: 10%;padding-right:10%;
- /* border-top: 0.5px solid rgba(255,255,255,0.5);
-  border-bottom: 0.5px solid rgba(255,255,255,0.5);*/
 }
 
 @media screen and (max-width: 65.141em){
@@ -247,7 +307,7 @@ ul.products li.product a h3{
 
 }
 
-/*== Thumbnail Mouse Over Effect ==*/
+/* Thumbnail Mouse Over Effect */
 
 ul.products li .hover-overlay a{
  position: absolute;
@@ -261,8 +321,6 @@ ul.products li .hover-overlay a{
  z-index: 10;
 }
 
-
-
 ul.products li .hover-overlay a:hover{
  background-color: rgba(0,0,0,0.7);
 }
@@ -275,26 +333,60 @@ span.onsale {
  display: none;
 }
 
+/*------------------------------------*\
+    TEMPLATE
+\*------------------------------------*/
 
-
-
-
-
-
-
-/* ==============
-Product
-=================*/
-
-/*隐藏“基本信息”和“产品描述”标题*/
-.product h2:first-of-type {
+.page-template-template-fullwidth-shift-upwards-php .headerwrapper .page-title,
+.page-template-template-fullwidth-shift-upwards-php .woocommerce-breadcrumb{
  display: none;
 }
 
-.product h2:nth-of-type(2) {
+.page-template-template-fullwidth-shift-upwards-php .site-main{
+ margin-top: -660px;
+ position: relative;
+ left:0;
+ right:0;
+ margin-left: auto;
+ margin-right: auto;
+ z-index: 2000;
+ background-color: white;
+ padding:30px 50px;
+ -webkit-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
+ -moz-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
+ box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
+}
+
+.page-template-template-fullwidth-shift-upwards-php .myfixed{
  display: none;
 }
 
+.page-template-template-fullwidth-shift-upwards-php #masthead{
+ z-index: auto;
+}
+
+/*------------------------------------*\
+    FRONT PAGE
+\*------------------------------------*/
+
+body.home h1{
+ position: static!important;
+}
+
+#pl-2040 .panel-grid-cell .so-panel{
+ margin-bottom: 0!important;
+}
+
+
+/*------------------------------------*\
+    PRODUCT PAGE
+\*------------------------------------*/
+
+
+.product h2:first-of-type,
+.product h2:nth-of-type(2) { /*隐藏“基本信息”和“产品描述”标题*/
+ display: none;
+}
 
 .single-product div.product form.cart{
  border-top: none!important;
@@ -366,9 +458,6 @@ div#iam{
 
 }
 
-
-
-
 @media screen and (max-width: 768px){
 
  #product-sidebar{
@@ -378,15 +467,12 @@ div#iam{
 
  .single-product div.product{
   width: 100%;
-/*  padding-right:30px;*/
   float: none;
  }
-
 }
 
 
 #hero-product{
-
  background-size: cover;
  background-position: center center;
  width: 100%;
@@ -448,8 +534,6 @@ div.quantity{
  float: left!important;
 }
 
-
-
 /* article header style */
 #post-2040 header{
  display:none;
@@ -463,30 +547,7 @@ div.quantity{
 }
 
 
-/* ==============
-Footer
-=================*/
-
-footer section.block{
- text-align: center;
-}
-
-.widget_nav_menu ul li::before{
- display: none;
-}
-
-div.site-info{
- text-align: center;
-}
-
-aside#sow-image-2{
- max-width: 270px;
- margin-left: auto;
- margin-right: auto;
- margin-top:-40px;
-}
-
-/*table display*/
+/* table display */
 
 table.shop_attributes th{
  white-space: nowrap;
@@ -515,63 +576,16 @@ table.shop_attributes tr td{
 }
 
 
-/*================
-Handheld Menu
-=================*/
-.menu-toggle:before{
- font-size: 40px!important;
- padding-left: 20px!important;
+/*------------------------------------*\
+    PLUGIN
+\*------------------------------------*/
 
-
-}
-
-.menu-toggle{
- font-size: 0!important;
- background-color:transparent;
- box-shadow: none;
- position: relative!important;
- z-index: 2000!important;
-}
-
-.menu-toggle:hover{
- background-color: transparent;
-}
-
-.handheld-navigation{
- position: relative;
- text-align: left;
- background-color: rgb(60,60,60);
- width: 300px!important;
- height: 1500px;
- margin-top: -100px;
- padding-top: 120px;
- z-index: 1000;
-}
-
-.myfixed .menu-toggle{
- margin-top: 10px;
-}
-
-.handheld-navigation .menu-item a:before{
- display: none;
-}
-
-@media screen and (max-width: 600px){
- #wpadminbar{
-  position:fixed;
- }
-}
-
-/*================
-Plugin
-=================*/
-
-/*== Ultimate Member ==*/
+/* Ultimate Member */
 .um-field-role_select{
  display: none;
 }
 
-/*== Product Image Badge ==*/
+/* Product Image Badge */
 div.container-image-and-badge br{
  display: none;
 }
@@ -601,11 +615,8 @@ div.headerwrapper h1{
  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.page-template-template-fullwidth-shift-upwards-php #masthead{
- z-index: auto;
-}
 
-/*== mystickynav ==*/
+/* mystickynav */
 
 .myfixed {
  float:none!important;
@@ -618,13 +629,12 @@ div.headerwrapper h1{
  padding: 0!important;
  margin: 0 auto!important;
  z-index: 9999!important;
-
-
 }
 
 .admin-bar .myfixed {
  top: 32px!important;
 }
+
 @media screen and (max-width: 782px) {
  .admin-bar .myfixed {
   top: 46px!important;
@@ -656,64 +666,9 @@ div.headerwrapper h1{
 }
 
 
-/* Shift Main Content Upwards */
+/* Fluid Responsive Header */
 
-/*.site-header{
- position: relative;
- z-index: 10;
-
-}*/
-
-.site-branding{
- position: relative;
- z-index: 20;
-}
-
-.page-template-template-fullwidth-shift-upwards-php .headerwrapper .page-title,
-.page-template-template-fullwidth-shift-upwards-php .woocommerce-breadcrumb{
- display: none;
-}
-
-
-.page-template-template-fullwidth-shift-upwards-php .site-main{
- margin-top: -660px;
- /*max-width: 500px;*/
- position: relative;
- left:0;
- right:0;
- margin-left: auto;
- margin-right: auto;
- /*top:100px;*/
- z-index: 2000;
- background-color: white;
- padding:30px 50px;
- -webkit-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
- -moz-box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
- box-shadow: 0 2px 4px 1px rgba(0,0,0,0.5);
-}
-
-
-
-footer{
- clear: both;
-}
-
-.page-template-template-fullwidth-shift-upwards-php .myfixed{
- display: none;
-}
-
-.site-branding{
- display:none!important;
-}
-
-
-/*==  Fluid Responsive Header ==*/
-
-
-
-/* eliminate duplicate arrows */
-
-span.frs-arrow-right{
+span.frs-arrow-right{  /*eliminate duplicate arrows */
  font-size: 0!important;
 }
 
@@ -721,9 +676,7 @@ span.frs-arrow-left{
  font-size: 0!important;
 }
 
-/* media queries */
-
-@media screen and (max-width:1300px){
+@media screen and (max-width:1300px){ /* media queries */
  #home-header-slidepjc-slideshow .frs-caption-content h4{
  font-size: 40px!important;
  }
@@ -732,18 +685,15 @@ span.frs-arrow-left{
   width: 60%!important;
   font-size: 18px!important;
  }
-
 }
 
 @media screen and (max-width:1024px){
-
  #home-header-slidepjc.frs-slideshow-container .slider-description{
   display: none;
  }
-
 }
 
-/*== siteorigin banner ==*/
+/* siteorigin banner */
 
 .jo-so-banner-33 img{
  margin: 0 auto;
@@ -781,7 +731,6 @@ div#pg-2040-1 .siteorigin-panels-stretch{
 }
 
 div.jo-so-banner-33{
-/* height:324px;*/
  padding: 10px 50px 10px 50px;
  text-align: center;
 }
@@ -802,7 +751,6 @@ div.jo-so-banner-33 p{
 div.jo-so-banner-33 p{
  display: block;
  margin-bottom: 0!important;
-/* height:134px;*/
 }
 
 div.jo-so-banner-33 p a img{
@@ -822,9 +770,7 @@ div.jo-so-banner-33 div.textwidget h3+p{
 
 
 
-/*================
-Bootstrap Tabs
-=================*/
+/* Bootstrap Tabs */
 
 .nav{
  padding-left: 0;
@@ -836,7 +782,6 @@ Bootstrap Tabs
  overflow: hidden;
  margin: 0 auto 45px;
  text-align: center;
-
 }
 
 .nav>li{
