@@ -5,7 +5,7 @@
  Author:       Jinyan Yu
  Author URI:   http://example.com
  Template:     storefront
- Version:      0.6.9
+ Version:      0.7.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
@@ -676,6 +676,9 @@ span.frs-arrow-left{  /*eliminate duplicate arrows */
  font-size: 0!important;
 }
 
+p.frs-caption-button.frs-buttonskin-white{
+ display: block!important;
+}
 p.frs-caption-button.frs-buttonskin-white a span { /*button size*/
  font-size: 20px;
 }
@@ -714,7 +717,7 @@ p.frs-caption-button.frs-buttonskin-white a span { /*button size*/
 @media screen and (max-width:500px){
  #home-header-slidepjc-slideshow .frs-caption h4{
   font-size: 30px!important;
-  font-weight: 700!important; /*overwrite plugin default*/
+  font-weight: 600!important; /*overwrite plugin default*/
   line-height: 1.3!important;
  }
  #home-header-slidepjc-slideshow .frs-caption h4 + div,
