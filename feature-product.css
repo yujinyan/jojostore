@@ -1,0 +1,263 @@
+#fp-wrapper {
+
+    margin-top:20px;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 475px){
+    #fp-wrapper {
+        font-size: 14px!important;
+    }
+}
+
+
+#fp-wrapper ul{
+    padding-left: 0;
+    list-style-type: none;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+#fp-wrapper .b-margin {
+    margin-bottom: 40px;
+}
+
+#fp-wrapper #intro {
+    height: 266px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.25em;
+    line-height: 2;
+    padding: 0 5%
+}
+
+#fp-wrapper #card {
+    height: 59.375em;
+    background-color: black;
+}
+
+#fp-wrapper #card-icon-set {
+    height: 200px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    margin-bottom: 1.25em;
+}
+
+#fp-wrapper .single-icon {
+    display: inline-block;
+    width:calc(100% / 3);
+    height: 100px;
+    text-align: center;
+}
+
+#fp-wrapper .single-icon img{
+    width: 5.5em;
+}
+
+#fp-wrapper .icon-text {
+    color: white;
+}
+
+#fp-wrapper .icon-text h3 {
+    margin: 10px auto;
+    margin-bottom: 5px;
+    border-bottom: solid white 2px;
+    padding-bottom: 5px;
+    width: 50%;
+    color: white;
+}
+
+#fp-wrapper .icon-text p {
+    margin-top: 0;
+}
+
+#fp-wrapper .image {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#fp-wrapper #card-image {
+    height: 37.5em;
+    border-right: solid black 3.125em;
+}
+
+#fp-wrapper #card-title h1{
+/*            background-color: white;*/
+    margin-top: 45px;
+    font-weight: 700;
+    font-size: 4.375em;
+    color: white;
+    position: relative;
+    left: -20px;
+}
+
+@media screen and (max-width:475px) {
+    #fp-wrapper #card-title h1 {
+        display: none;
+    }
+}
+
+#fp-wrapper .section > h2 {
+    text-align: center;
+    position: relative;
+    margin: 1.25em auto;
+}
+
+#fp-wrapper .section > h2 p {
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: solid 2px black;
+    margin: 1em auto 1em auto;
+}
+
+#fp-wrapper .img-single {
+    height: 20em;
+}
+
+
+#fp-wrapper .schedule {
+    position: relative;
+}
+
+#fp-wrapper .schedule-wrapper {
+    height: 25.625em;
+}
+
+#fp-wrapper .schedule-list-bg {
+    position: relative;
+    top: 30px;
+    height: 23.75em;
+    background-color: lightgrey;
+    width: 85.7%;
+}
+
+#fp-wrapper .schedule-list-bg > div {
+    position: relative;
+    width   : 50%;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#fp-wrapper .schedule-img {
+    right: 0;
+    height: 23.75em;
+    width: 57.1%;
+    position: absolute;
+    top: 0;
+}
+
+#fp-wrapper .schedule-list-bg-inner {
+    background-color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    left: 10%
+}
+
+#fp-wrapper .small-title {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    margin: 0;
+
+}
+
+#fp-wrapper #jopal-name {
+    padding: 5px 20px;
+    position: relative;
+    top: -28px;
+}
+
+#fp-wrapper .schedule-list-title {
+    margin: 0;
+    position: relative;
+    top: -15px;
+}
+
+#fp-wrapper .schedule-list-text {
+    position: absolute;
+    top:-100px;
+    font-weight: 700;
+}
+
+#fp-wrapper #jopal-bg {
+    position: relative;
+    height: 37.5em;
+    padding: 0 5%;
+}
+
+#fp-wrapper #jopal-bg-inner {
+    position: absolute;
+    background-color: white;
+    padding: 5% 15%;
+    bottom: 4%;
+    left: 5%;
+    width: 90%;
+    text-align: center;
+}
+
+#fp-wrapper #jopal-bg-inner h3 {
+    margin-top: -5px;
+}
+
+#fp-wrapper #jopal-bg-inner p {
+    text-align: left;
+}
+
+#fp-wrapper #timetable table {
+    text-align: center;
+    margin-top: -20px;
+    width: 100%;
+    height: 250px;
+    color: white;
+    background-color: black;
+    border-collapse: collapse;
+}
+
+#fp-wrapper #timetable tr,
+#fp-wrapper #timetable td {
+    text-align: center;
+}
+
+#fp-wrapper #timetable table td {
+    width: 14.29%;
+    padding: 0;
+}
+
+#fp-wrapper #timetable p:first-of-type {
+    margin-top: -25px;
+    text-align: center;
+
+}
+
+#fp-wrapper #timetable table tr td {
+    vertical-align: middle;
+}
+
+#fp-wrapper #timetable table tr:first-of-type {
+    color: black;
+    background-color: white;
+    height: 50px;
+    border: solid black 6px;
+    margin-bottom: 20px;
+}
+
+
+/*hacks to solve style conflicts*/
+
+#fp-wrapper h2.feature-product-title {
+    display: block!important;
+    color: black;
+}
+
+#fp-wrapper #card-icon-set .single-icon img {
+    display:inline;
+}
