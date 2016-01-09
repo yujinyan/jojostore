@@ -6,7 +6,8 @@
 
 @media screen and (max-width: 475px){
     #fp-wrapper {
-        font-size: 14px!important;
+        font-size: 12px;
+        margin-top: 0;
     }
 }
 
@@ -38,6 +39,8 @@
     background-color: black;
 }
 
+
+
 #fp-wrapper #card-icon-set {
     height: 200px;
     width: 100%;
@@ -58,6 +61,15 @@
     width: 5.5em;
 }
 
+@media screen and (max-width: 475px){
+    #fp-wrapper .single-icon img {
+        width: 4.5em;
+    }
+    #fp-wrapper .icon-text h3 {
+        font-size: 1.1em;
+    }
+}
+
 #fp-wrapper .icon-text {
     color: white;
 }
@@ -69,6 +81,7 @@
     padding-bottom: 5px;
     width: 50%;
     color: white;
+    font-size:1.25em;
 }
 
 #fp-wrapper .icon-text p {
@@ -83,6 +96,16 @@
 #fp-wrapper #card-image {
     height: 37.5em;
     border-right: solid black 3.125em;
+}
+
+@media screen and (max-width: 400px) {
+    #fp-wrapper #card {
+        height: 50em;
+    }
+
+    #fp-wrapper #card-image {
+        height: 30em;
+    }
 }
 
 #fp-wrapper #card-title h1{
