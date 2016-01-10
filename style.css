@@ -17,7 +17,7 @@
     TYPOGRAPHY
 \*------------------------------------*/
 
-p,h1,h2,h3,h4{
+p,h1,h2,h3,h4,body,button,tr,td{
  font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
