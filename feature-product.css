@@ -24,6 +24,12 @@
     margin-bottom: 40px;
 }
 
+#fp-wrapper .plain-text {
+    line-height: 2;
+    padding: 0 2em;
+    
+}
+
 #fp-wrapper #intro {
     height: 266px;
     display: flex;
@@ -110,7 +116,7 @@
 
 #fp-wrapper #card-title h1{
 /*            background-color: white;*/
-    margin-top: .9em;
+    margin-top: .8em;
     font-weight: 700;
     font-size: 4.375em;
     color: white;
@@ -158,6 +164,11 @@
     width: 85.7%;
 }
 
+#fp-wrapper .schedule-list-bg ul{
+    font-size:.8em;
+    line-height: 1.8;
+}
+
 #fp-wrapper .schedule-list-bg > div {
     position: relative;
     width   : 50%;
@@ -195,8 +206,10 @@
 
 #fp-wrapper #jopal-name {
     padding: 5px 20px;
-    position: relative;
-    top: -28px;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+
 }
 
 #fp-wrapper .schedule-list-title {
@@ -227,8 +240,12 @@
     text-align: center;
 }
 
+#fp-wrapper #jopal-title {
+    margin-top: 2em;
+}
+
 #fp-wrapper #jopal-bg-inner h3 {
-    margin-top: -5px;
+    margin-top: 2em;
 }
 
 #fp-wrapper #jopal-bg-inner p {
