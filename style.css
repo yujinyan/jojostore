@@ -896,9 +896,10 @@ div.jo-so-banner-33 div.textwidget h3+p{
  margin-top:1.618em;
 }
 
-.aws-search-field {
+.aws-container .aws-search-field {
  width: 100%;
  margin: 0 auto;
+ font-size: 1em;
 }
 
 @media screen and (max-width: 768px) {
