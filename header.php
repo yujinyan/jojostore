@@ -42,7 +42,10 @@
 				 * @hooked storefront_product_search - 40
 				 * @hooked storefront_primary_navigation - 50
 				 */
-				do_action( 'storefront_header' ); ?>
+				do_action( 'storefront_header' );
+				echo do_shortcode('[aws_search_form]');
+
+				?>
 
 			</div>
 

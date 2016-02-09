@@ -399,9 +399,9 @@ body.home h1{
  margin-bottom:0!important;
 }
 
-.product .summary p {
+/*.product .summary p {
  font-size: 18px;
-}
+}*/
 
 
 #product-sidebar{
@@ -879,4 +879,35 @@ div.jo-so-banner-33 div.textwidget h3+p{
 
 .tab-content>.active{
  display: block;
+}
+
+.aws-container {
+ position: absolute;
+ z-index:1200;
+ bottom:0;
+ width:100%;
+ padding-left: 20%;
+ padding-right: 20%;
+ background-color: rgba(0,0,0,.5);
+}
+
+.aws-search-form {
+ /*width: 60%;*/
+ margin-top:1.618em;
+}
+
+.aws-search-field {
+ width: 100%;
+ margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+ .aws-container {
+  padding-left:10%;
+  padding-right:10%;
+ }
+ .aws-search-form {
+  margin-top: 1em;
+  margin-bottom: 1em;
+ }
 }
