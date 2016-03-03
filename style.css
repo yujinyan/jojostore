@@ -247,7 +247,7 @@ ul.products li a.button{
  display: none!important;
 }
 
-ul.products li.product a h3{
+#main ul.products li.product h3{
  font-size: 22px;
  color:white;
  position: absolute;
@@ -261,6 +261,12 @@ ul.products li.product a h3{
  padding-left: 10%;padding-right:10%;
 }
 
+ul.products br,
+ul.products .count{
+ display: none;
+}
+
+
 @media screen and (max-width: 65.141em){
 
  div.col-full{
@@ -270,7 +276,7 @@ ul.products li.product a h3{
 }
 
 @media screen and (max-width:836px){
- ul.products li.product a h3{
+ #main ul.products li.product  h3{
   font-size: 18px;
   line-height: 28px;
  }
@@ -278,17 +284,17 @@ ul.products li.product a h3{
 }
 
 @media screen and (max-width: 768px) {
- ul.products li.product {
+#main ul.products li.product {
   width: 45%;
  }
- ul.products li.product a h3{
+#mian ul.products li.product  h3{
 
   top:45%;
  }
 }
 
 @media screen and (max-width: 470px){
- ul.products li.product a h3{
+#main ul.products li.product  h3{
   font-size: 16px;
   line-height: 20px;
   top: 40%;
@@ -297,10 +303,10 @@ ul.products li.product a h3{
 }
 
 @media screen and (max-width: 320px){
- ul.products li.product{
+ #main  ul.products li.product{
   width: 100%;
  }
- ul.products li.product a h3{
+ #main ul.products li.product  h3{
   font-size: 1.2em;
   top:45%;
  }
@@ -309,7 +315,7 @@ ul.products li.product a h3{
 
 /* Thumbnail Mouse Over Effect */
 
-ul.products li .hover-overlay a{
+#main ul.products li .hover-overlay a{
  position: absolute;
  content: '';
  top: 0;
@@ -332,6 +338,7 @@ ul.products li.product a{
 span.onsale {
  display: none;
 }
+
 
 /*------------------------------------*\
     TEMPLATE
